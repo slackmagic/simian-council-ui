@@ -1,8 +1,8 @@
 import "./App.css";
 import { Container, Header } from "semantic-ui-react";
 import { Tab } from "semantic-ui-react";
-import Password from "./Password";
-import Pokemon from "./Pokemon";
+import Password from "./components/Password";
+import Pokemon from "./components/Pokemon";
 
 const panes = [
 	{
@@ -19,9 +19,6 @@ function App() {
 	return (
 		<div className="App">
 			<Container fluid>
-				<Header as="h1" textAlign="left">
-					🐵 Simian council
-				</Header>
 				<Tab
 					menu={{
 						color: "yellow",
