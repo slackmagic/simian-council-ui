@@ -1,25 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { Container, Header } from "semantic-ui-react";
+import { Tab } from "semantic-ui-react";
+import Password from "./Password";
+import Pokemon from "./Pokemon";
+
+const panes = [
+	{
+		menuItem: "PASSWORD",
+		render: () => <Password></Password>,
+	},
+	{
+		menuItem: "POKEMON",
+		render: () => <Pokemon></Pokemon>,
+	},
+];
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<div className="App">
+			<Container fluid>
+				<Header as="h1" textAlign="left">
+					🐵 Simian council
+				</Header>
+				<Tab
+					menu={{
+						color: "yellow",
+						inverted: true,
+						attached: false,
+						tabular: false,
+					}}
+					panes={panes}
+				/>
+			</Container>
+		</div>
+	);
 }
 
 export default App;
